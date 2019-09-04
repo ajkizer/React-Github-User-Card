@@ -1,15 +1,22 @@
 import React from "react";
+import { Card, Icon, Image } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
 
 class User extends React.Component {
   render() {
     const userInfo = this.props.userInfo;
     return (
-      <div className="user-card">
-        <img src={userInfo.photo} />
-        <h2>{userInfo.user}</h2>
-        <p>{userInfo.bio}</p>
-        <p>followers: {userInfo.followers}</p>
-      </div>
+      <Card id="user-card">
+        <Image src={userInfo.photo} wrapped ui={false} />
+        <Card.Content>
+          <Card.Header>{userInfo.user}</Card.Header>
+          <Card.Description>{userInfo.bio}</Card.Description>
+          <Card.Content extra>
+            <Icon name="user" />
+            followers: {userInfo.followers}
+          </Card.Content>
+        </Card.Content>
+      </Card>
     );
   }
 }

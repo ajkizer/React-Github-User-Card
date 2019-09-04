@@ -37,7 +37,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello from app component</h1>
         <User userInfo={this.state} />
         <FollowerList followerNames={this.state.followerNames} />
       </div>
